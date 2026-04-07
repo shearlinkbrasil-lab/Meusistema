@@ -5,7 +5,7 @@ const API_KEY = "AIzaSyBcUO-aQkdX7z6L6rImkp0nPh1ACoN5oGM";
 async function getUserLocation() {
     return new Promise((resolve) => {
         if (!navigator.geolocation) {
-            resolve({ lat: -31.33, lon: -54.10, name: "Bagé-RS (Fallback por falta de suporte GPS)" });
+            resolve({ lat: -29.78, lon: -55.79, name: "Alegrete-RS (Região Sede)" });
             return;
         }
 
@@ -14,12 +14,12 @@ async function getUserLocation() {
                 resolve({ 
                     lat: pos.coords.latitude, 
                     lon: pos.coords.longitude,
-                    name: "Localização Atual do Servidor/Produtor" 
+                    name: "Localização Atual do Produtor" 
                 });
             },
             (err) => {
-                console.warn("Permissão de localização negada ou indisponível. Usando fallback (Bagé).", err);
-                resolve({ lat: -31.33, lon: -54.10, name: "Bagé-RS (Fallback Seguro - Permissão Negada)" });
+                console.warn("Permissão de localização negada ou indisponível. Fixando em Alegrete.", err);
+                resolve({ lat: -29.78, lon: -55.79, name: "Alegrete-RS (Região Sede)" });
             },
             { timeout: 7000 }
         );
