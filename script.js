@@ -33,6 +33,18 @@ async function getRealTimeWeather() {
         const res = await fetch(url);
         const data = await res.json();
         
+        // --- ATIVAR O DASHBOARD VISUAL (NOVA UI) ---
+        const uiLoc = document.getElementById('dash-location');
+        const uiTemp = document.getElementById('dash-temp');
+        const uiRain = document.getElementById('dash-rain');
+        const uiWind = document.getElementById('dash-wind');
+        
+        if (uiLoc) uiLoc.innerText = coords.name;
+        if (uiTemp) uiTemp.innerText = `${data.daily.temperature_2m_max[0]}°C`;
+        if (uiRain) uiRain.innerText = `${data.daily.precipitation_probability_max[0]}%`;
+        if (uiWind) uiWind.innerText = `${data.daily.wind_speed_10m_max[0]} km/h`;
+        // ------------------------------------------
+
         let report = `\n\n[DADOS METEOROLÓGICOS REAIS OBRIGATÓRIOS]\nCruze os dados climáticos a seguir (previsão oficial) com a base de conhecimento de ovinocultura e as regras de esquila para basear rigorosamente sua decisão:\n`;
         report += `🗺️ Região Analisada: ${coords.name} (Latitude: ${coords.lat}, Longitude: ${coords.lon})\nPrevisão para os próximos 7 dias:\n`;
         
@@ -62,10 +74,25 @@ document.addEventListener('DOMContentLoaded', () => {
         // Converte as quebras de linha em <br> para a formatação ficar bonita
         const formattedText = text.replace(/\n/g, '<br>');
 
-        messageDiv.innerHTML = `
+        let innerContent = `
             <div class="avatar"><i class="ph ${avatarIcon}"></i></div>
-            <div class="bubble">${formattedText}</div>
+            <div class="bubble">
+                ${formattedText}
         `;
+
+        // Se a mensagem for da IA e não for a de carregamento, nós adicionamos o Botão Verde do WhatsApp!
+        if (sender === 'ai' && !text.includes("Analizando dados")) {
+            // O texto é linkado de forma segura pra abrir direto no Whatsapp Web / Mobile do cara
+            const zapText = encodeURIComponent(`*Relatório Shearlink Consultoria Agro:*\n\n${text}`);
+            innerContent += `
+                <br>
+                <a href="https://api.whatsapp.com/send?text=${zapText}" target="_blank" class="whatsapp-export-btn">
+                    <i class="ph ph-whatsapp-logo"></i> Repassar ao Produtor no WhatsApp
+                </a>
+            `;
+        }
+        innerContent += `</div>`;
+        messageDiv.innerHTML = innerContent;
 
         chatMessages.appendChild(messageDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;

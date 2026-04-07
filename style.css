@@ -302,3 +302,109 @@ h1, h2, h3, h4 {
     color: var(--text-muted);
     font-size: 12px;
 }
+
+/* Painel de Controle (Dashboard Lado Direito) */
+.dashboard-panel {
+    width: 320px;
+    background-color: var(--bg-panel);
+    border-left: 1px solid var(--border);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.dash-header h3 {
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.dash-widget {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.dash-widget:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dash-widget i {
+    font-size: 32px;
+    color: var(--accent);
+}
+
+.dash-widget.highlight {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    border-color: var(--accent);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.dash-widget.highlight i, 
+.dash-widget.highlight .widget-title, 
+.dash-widget.highlight .widget-value {
+    color: white;
+}
+
+.widget-title {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.widget-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.widget-value#dash-location {
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+/* Botão do WhatsApp (Dentro do Balão de Chat IA) */
+.whatsapp-export-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+}
+
+.whatsapp-export-btn:hover {
+    background-color: #128C7E;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transform: translateY(-2px);
+}
+
+.whatsapp-export-btn i {
+    font-size: 18px;
+}
