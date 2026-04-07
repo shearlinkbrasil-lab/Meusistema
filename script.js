@@ -46,10 +46,10 @@ async function getRealTimeWeather() {
         // ------------------------------------------
 
         let report = `\n\n[DADOS METEOROLÓGICOS REAIS OBRIGATÓRIOS]\nCruze os dados climáticos a seguir (previsão oficial) com a base de conhecimento de ovinocultura e as regras de esquila para basear rigorosamente sua decisão:\n`;
-        report += `🗺️ Região Analisada: ${coords.name} (Latitude: ${coords.lat}, Longitude: ${coords.lon})\nPrevisão para os próximos 7 dias:\n`;
+        report += `🗺️ Região Analisada: ${coords.name}\nPrevisão para os próximos 5 dias:\n`;
         
-        for(let i = 0; i < data.daily.time.length; i++) {
-            report += `- Data ${data.daily.time[i]}: Mínima ${data.daily.temperature_2m_min[i]}°C, Máxima ${data.daily.temperature_2m_max[i]}°C | Chuva (Probabilidade): ${data.daily.precipitation_probability_max[i]}% | Vento Máx: ${data.daily.wind_speed_10m_max[i]} km/h\n`;
+        for(let i = 0; i < 5; i++) {
+            report += `- Data ${data.daily.time[i]}: Mínima ${data.daily.temperature_2m_min[i]}°C, Máxima ${data.daily.temperature_2m_max[i]}°C | Chuva: ${data.daily.precipitation_probability_max[i]}% | Vento: ${data.daily.wind_speed_10m_max[i]} km/h\n`;
         }
         return report;
     } catch(e) {
