@@ -3,27 +3,9 @@ const API_KEY = "AIzaSyBcUO-aQkdX7z6L6rImkp0nPh1ACoN5oGM";
 
 // --- NOVAS FUNÇÕES: IA Climática ---
 async function getUserLocation() {
-    return new Promise((resolve) => {
-        if (!navigator.geolocation) {
-            resolve({ lat: -29.78, lon: -55.79, name: "Alegrete-RS (Região Sede)" });
-            return;
-        }
-
-        navigator.geolocation.getCurrentPosition(
-            (pos) => {
-                resolve({ 
-                    lat: pos.coords.latitude, 
-                    lon: pos.coords.longitude,
-                    name: "Localização Atual do Produtor" 
-                });
-            },
-            (err) => {
-                console.warn("Permissão de localização negada ou indisponível. Fixando em Alegrete.", err);
-                resolve({ lat: -29.78, lon: -55.79, name: "Alegrete-RS (Região Sede)" });
-            },
-            { timeout: 7000 }
-        );
-    });
+    // Para efeito de apresentação MVP na Pampatec, fixamos Alegrete-RS
+    // Isso evita alertas irritantes de "Permitir Localização" no navegador do avaliador
+    return { lat: -29.7903, lon: -55.7947, name: "Alegrete-RS (Base Shearlink)" };
 }
 
 async function getRealTimeWeather() {
