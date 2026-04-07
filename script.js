@@ -46,9 +46,9 @@ async function getRealTimeWeather() {
         // ------------------------------------------
 
         let report = `\n\n[DADOS METEOROLÓGICOS REAIS OBRIGATÓRIOS]\nCruze os dados climáticos a seguir (previsão oficial) com a base de conhecimento de ovinocultura e as regras de esquila para basear rigorosamente sua decisão:\n`;
-        report += `🗺️ Região Analisada: ${coords.name}\nPrevisão para os próximos 5 dias:\n`;
+        report += `🗺️ Região Analisada: ${coords.name}\nPrevisão para os próximos 7 dias:\n`;
         
-        for(let i = 0; i < 5; i++) {
+        for(let i = 0; i < 7; i++) {
             report += `- Data ${data.daily.time[i]}: Mínima ${data.daily.temperature_2m_min[i]}°C, Máxima ${data.daily.temperature_2m_max[i]}°C | Chuva: ${data.daily.precipitation_probability_max[i]}% | Vento: ${data.daily.wind_speed_10m_max[i]} km/h\n`;
         }
         return report;
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
         // Regra de comportamento da nossa IA (Consultor)
-        let systemPrompt = "Você é o especialista chefe de ovinocultura da empresa Shearlink Brasil. Você ajuda produtores com manejo sanitário, análise do clima para ovinos, e orientações profissionais sobre esquila de ovinos. Responda sempre de forma respeitosa, objetiva e baseada em dados técnicos agrícolas reais. Nunca fuja do tema da ovinocultura e esquila.";
+        let systemPrompt = "Você é o especialista chefe de ovinocultura da empresa Shearlink Brasil. Responda sempre de forma respeitosa, super direta e baseada em dados técnicos agrícolas reais. Nunca fuja do tema esquila. REGRA CRÍTICA DE CLIMA: Você recebe os dados de 7 dias, mas NUNCA liste a previsão do tempo dia por dia nas suas respostas de forma chata. Analise os 7 dias e SÓ CITE O CLIMA caso identifique alguma mudança brusca (frio extremo, chuva forte ou vento) que de fato coloque o rebanho ou o processo de tosquia em risco.";
         
         // Se a variável knowledgeBase existir no arquivo knowledge.js, nós a adicionamos na memória da IA!
         if (typeof knowledgeBase !== 'undefined') {
