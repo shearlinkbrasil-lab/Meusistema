@@ -38,7 +38,7 @@ foreach ($pdf in $pdfs) {
         
         $contentToAppend = "`n`n// Conteúdo importado do PDF: $($pdf.Name)`nknowledgeBase += `` `n`n=================`nARQUIVO: $($pdf.Name)`n=================`n$($extraidoSeguro)`n ``;`n"
         
-        Add-Content -Path "knowledge.js" -Value $contentToAppend
+        Add-Content -Path "knowledge.js" -Value $contentToAppend -Encoding UTF8
         Write-Host " ---> Regras da esquila extraídas e salvas no Cérebro com sucesso!"
     } catch {
         Write-Host " ---> ERRO AO PROCESSAR $($pdf.Name): $($_.Exception.Message)"

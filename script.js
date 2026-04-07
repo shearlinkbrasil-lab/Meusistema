@@ -1,6 +1,52 @@
 // PASSO FUNDAMENTAL: Cole o longo código que o Google gerou para você dentro das aspas abaixo!
 const API_KEY = "AIzaSyBcUO-aQkdX7z6L6rImkp0nPh1ACoN5oGM";
 
+// --- NOVAS FUNÇÕES: IA Climática ---
+async function getUserLocation() {
+    return new Promise((resolve) => {
+        if (!navigator.geolocation) {
+            resolve({ lat: -31.33, lon: -54.10, name: "Bagé-RS (Fallback por falta de suporte GPS)" });
+            return;
+        }
+
+        navigator.geolocation.getCurrentPosition(
+            (pos) => {
+                resolve({ 
+                    lat: pos.coords.latitude, 
+                    lon: pos.coords.longitude,
+                    name: "Localização Atual do Servidor/Produtor" 
+                });
+            },
+            (err) => {
+                console.warn("Permissão de localização negada ou indisponível. Usando fallback (Bagé).", err);
+                resolve({ lat: -31.33, lon: -54.10, name: "Bagé-RS (Fallback Seguro - Permissão Negada)" });
+            },
+            { timeout: 7000 }
+        );
+    });
+}
+
+async function getRealTimeWeather() {
+    const coords = await getUserLocation();
+    try {
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${coords.lat}&longitude=${coords.lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max&timezone=America%2FSao_Paulo&forecast_days=7`;
+        const res = await fetch(url);
+        const data = await res.json();
+        
+        let report = `\n\n[DADOS METEOROLÓGICOS REAIS OBRIGATÓRIOS]\nCruze os dados climáticos a seguir (previsão oficial) com a base de conhecimento de ovinocultura e as regras de esquila para basear rigorosamente sua decisão:\n`;
+        report += `🗺️ Região Analisada: ${coords.name} (Latitude: ${coords.lat}, Longitude: ${coords.lon})\nPrevisão para os próximos 7 dias:\n`;
+        
+        for(let i = 0; i < data.daily.time.length; i++) {
+            report += `- Data ${data.daily.time[i]}: Mínima ${data.daily.temperature_2m_min[i]}°C, Máxima ${data.daily.temperature_2m_max[i]}°C | Chuva (Probabilidade): ${data.daily.precipitation_probability_max[i]}% | Vento Máx: ${data.daily.wind_speed_10m_max[i]} km/h\n`;
+        }
+        return report;
+    } catch(e) {
+        console.error("Erro ao buscar clima via Open-Meteo", e);
+        return ""; 
+    }
+}
+// -------------------------------------
+
 document.addEventListener('DOMContentLoaded', () => {
     const inputField = document.getElementById('user-input');
     const sendBtn = document.getElementById('send-btn');
@@ -52,6 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof knowledgeBase !== 'undefined') {
             systemPrompt += "\n\nBASE DE CONHECIMENTO OBRIGATÓRIA A SEGUIR:\n" + knowledgeBase;
         }
+
+        // Puxa o clima real do momento baseado na Geolocalização e injeta no Cérebro da IA silenciosamente
+        const weatherContext = await getRealTimeWeather();
+        systemPrompt += weatherContext;
 
         try {
             if (API_KEY === "COLE_AQUI_O_SEU_CODIGO_DO_GOOGLE" || API_KEY === "") {
