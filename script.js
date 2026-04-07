@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendBtn = document.getElementById('send-btn');
     const chatMessages = document.getElementById('chat-messages');
 
+    // Função que adiciona uma nova mensagem à tela
     function addMessage(text, sender) {
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${sender}`;
@@ -45,7 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
         // Regra de comportamento da nossa IA (Consultor)
-        const systemPrompt = "Você é o especialista chefe de ovinocultura da empresa Shearlink Brasil. Você ajuda produtores com manejo sanitário, análise do clima para ovinos, e orientações profissionais sobre esquila de ovinos. Responda sempre de forma respeitosa, objetiva e baseada em dados técnicos agrícolas reais. Nunca fuja do tema da ovinocultura e esquila.";
+        let systemPrompt = "Você é o especialista chefe de ovinocultura da empresa Shearlink Brasil. Você ajuda produtores com manejo sanitário, análise do clima para ovinos, e orientações profissionais sobre esquila de ovinos. Responda sempre de forma respeitosa, objetiva e baseada em dados técnicos agrícolas reais. Nunca fuja do tema da ovinocultura e esquila.";
+        
+        // Se a variável knowledgeBase existir no arquivo knowledge.js, nós a adicionamos na memória da IA!
+        if (typeof knowledgeBase !== 'undefined') {
+            systemPrompt += "\n\nBASE DE CONHECIMENTO OBRIGATÓRIA A SEGUIR:\n" + knowledgeBase;
+        }
 
         try {
             if (API_KEY === "COLE_AQUI_O_SEU_CODIGO_DO_GOOGLE" || API_KEY === "") {
@@ -53,12 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Exige paciência do servidor do Gemini - Integração via Fetch direto!
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    system_instruction: { parts: [{ text: systemPrompt }] },
+                    systemInstruction: { parts: [{ text: systemPrompt }] },
                     contents: [{ role: "user", parts: [{ text: text }] }]
                 })
             });
