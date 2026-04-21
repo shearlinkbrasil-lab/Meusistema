@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#222b39">
     <title>Shearlink - Especialista em Ovinocultura</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
+
 <body>
     <div class="app-container">
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo-area">
-                <i class="ph ph-scissors"></i>
+                <img src="assets/logo_icon.png" alt="Shearlink Logo" class="brand-logo-icon">
                 <h1>Shearlink</h1>
             </div>
             <nav class="nav-menu">
@@ -33,20 +41,25 @@
                 </a>
             </nav>
             <div class="sidebar-footer">
-                <p>MVP Pampatec</p>
-                <small>Incubadora 2026</small>
+                <img src="assets/logo_seal.png" alt="Shearlink Official Seal" class="brand-seal">
             </div>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
             <header class="top-bar">
+                <button class="hamburger-btn" id="hamburger-btn" title="Menu" aria-label="Abrir menu">
+                    <i class="ph ph-list"></i>
+                </button>
                 <div>
                     <h2>Consultor de Ovinocultura</h2>
                     <p>Sua IA especialista em manejo sanitário e esquila.</p>
                 </div>
+                <button class="climate-toggle-btn" id="climate-toggle-btn" title="Painel Clima" aria-label="Abrir painel clima">
+                    <i class="ph ph-cloud-sun"></i> Clima
+                </button>
                 <div class="partner-badge">
-                    <span>by Shearlink Brasil</span>
+                    <img src="assets/logo_horizontal.png" alt="Shearlink Brasil" class="brand-logo-top">
                 </div>
             </header>
 
@@ -55,14 +68,21 @@
                     <div class="message ai">
                         <div class="avatar"><i class="ph ph-robot"></i></div>
                         <div class="bubble">
-                            Olá, produtor! Sou o consultor da Shearlink. Tenho na minha base os dados sanitários e artigos da Pampatec. Como posso te auxiliar com a esquila e manejo do seu rebanho hoje?
+                            Olá, produtor! Sou o consultor da Shearlink. Tenho na minha base os dados sanitários e
+                            artigos da Pampatec. Como posso te auxiliar com a esquila e manejo do seu rebanho hoje?
                         </div>
                     </div>
                 </div>
 
                 <div class="chat-input-area">
+                    <div class="quick-actions" id="quick-actions">
+                        <button onclick="setQuickAction('Como proteger cordeiros recém-nascidos do frio?')">🐑 Cuidado com Cordeiros</button>
+                        <button onclick="setQuickAction('MÓDULO PREMIUM CORTE | Raça: Texel | Peso Base: 20kg | Fase: Acabamento (60-90 dias). Gere a Tabela Preditiva de ganho de peso para os próximos 7 dias cruzando com o clima atual.')" class="btn-premium">👑 Predição: Ganho de Peso</button>
+                        <button onclick="setQuickAction('MÓDULO PREMIUM LEITE | Raça: Lacaune | Peso Base: 65kg | Fase: Pico de Lactação (30 dias pós-parto) | Produção Base: 2.5L/dia. Gere a Tabela Preditiva de produção leiteira para os próximos 7 dias cruzando com o clima atual.')" class="btn-premium">👑 Predição: Produção Leiteira</button>
+                    </div>
+
                     <div class="input-wrapper">
-                        <input type="text" id="user-input" placeholder="Digite sua pergunta sobre manejo..." autocomplete="off">
+                        <textarea id="user-input" placeholder="Digite sua pergunta sobre manejo..." rows="1"></textarea>
                         <button id="send-btn" title="Enviar"><i class="ph ph-paper-plane-right"></i></button>
                     </div>
                     <small>A IA consulta automaticamente a base de dados de artigos e dados climáticos.</small>
@@ -74,8 +94,22 @@
         <aside class="dashboard-panel">
             <div class="dash-header">
                 <h3><i class="ph ph-radar"></i> Monitoramento Agro</h3>
+                <div class="demo-badge" id="demo-badge" style="display: none;">[ MODO SIMULAÇÃO ATIVO ]</div>
+                <div class="satellite-indicator" id="satellite-pulse">
+                    <span class="pulse"></span>
+                    Sincronizado via Satélite
+                </div>
             </div>
-            
+
+            <!-- Widget de Risco Geral (NOVO) -->
+            <div class="dash-widget risk-status" id="risk-card">
+                <i class="ph ph-warning-circle" id="risk-icon"></i>
+                <div class="info">
+                    <p class="widget-title">Status de Risco Geral</p>
+                    <div class="widget-value" id="risk-value">Monitorando...</div>
+                </div>
+            </div>
+
             <div class="dash-widget location">
                 <i class="ph ph-map-pin"></i>
                 <div class="info">
@@ -92,29 +126,49 @@
                 </div>
             </div>
 
-            <div class="dash-widget">
-                <i class="ph ph-cloud-rain"></i>
-                <div class="info">
-                    <p class="widget-title">Risco de Chuva (Hoje)</p>
-                    <div class="widget-value" id="dash-rain">--%</div>
+            <div class="dash-grid">
+                <div class="dash-widget">
+                    <i class="ph ph-cloud-rain"></i>
+                    <div class="info">
+                        <p class="widget-title">Chuva</p>
+                        <div class="widget-value" id="dash-rain">--%</div>
+                    </div>
+                </div>
+
+                <div class="dash-widget">
+                    <i class="ph ph-wind"></i>
+                    <div class="info">
+                        <p class="widget-title">Vento</p>
+                        <div class="widget-value" id="dash-wind">-- km/h</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="dash-widget">
-                <i class="ph ph-wind"></i>
-                <div class="info">
-                    <p class="widget-title">Arrasto de Vento</p>
-                    <div class="widget-value" id="dash-wind">-- km/h</div>
-                </div>
-            </div>
-            
             <div class="dash-footer">
+                <div class="demo-controls">
+                    <p class="demo-label">Simular Cenários (Demo)</p>
+                    <div class="demo-buttons">
+                        <button onclick="activateDemoScenario('calor')" class="btn-demo calor" title="Simular 38°C"><i
+                                class="ph ph-fire"></i></button>
+                        <button onclick="activateDemoScenario('tempestade')" class="btn-demo chuva"
+                            title="Simular Tempestade"><i class="ph ph-cloud-rain"></i></button>
+                        <button onclick="activateDemoScenario('frio')" class="btn-demo vento"
+                            title="Simular Frio/Vento"><i class="ph ph-snowflake"></i></button>
+                        <button onclick="getRealTimeWeather()" class="btn-demo reset" title="Resetar Dados Reais"><i
+                                class="ph ph-arrow-counter-clockwise"></i></button>
+                    </div>
+                </div>
                 <small>Fonte: Sistema Open-Meteo Satélite API</small><br>
                 <small>Horizonte de Previsibilidade: 7 Dias Frente</small>
             </div>
         </aside>
     </div>
+
+    <!-- Overlay para fechar drawers no mobile -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+
     <script src="knowledge.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
