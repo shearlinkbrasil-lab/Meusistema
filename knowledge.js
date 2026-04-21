@@ -1,245 +1,303 @@
-// Este arquivo cont√©m o C√©rebro e a Base de Conhecimento do seu neg√≥cio (Artigos da Pampatec, Manuais da Lister, etc).
-// Voc√™ pode colar textos enormes aqui dentro dessas "crases" (` `). Tudo o que estiver aqui, o Gemini vai ler antes de responder!
-
+const pdfUris = [];
 const knowledgeBase = `
+# BASE DE CONHECIMENTO SHEARLINK ‚Äî MANUAIS SENAR CONSOLIDADOS
+# Fontes: Manual SENAR Ovinocultura de Leite + Manual SENAR Ovinocultura de Corte
 
-INSTRU√á√ïES DO NEG√ìCIO:
-A Shearlink Brasil √© uma empresa hospedada na incubadora Pampatec. 
-Nosso objetivo √© fornecer assessoria em Ovinocultura e viabilizar equipamentos da Lister Shearing.
+---
 
-REGRAS DE ESQUILA (Exemplo):
-- Nunca esquilar com a l√£ molhada.
-- Ap√≥s a esquila, abrigar os animais se a temperatura cair abaixo de 10 graus.
+## CLASSIFICA√á√ÉO DOS OVINOS
 
-** Cole seus artigos e resumos de PDF aqui abaixo **
+Ovinos s√£o ruminantes, mam√≠feros herb√≠voros, de f√°cil adapta√ß√£o a variados sistemas de produ√ß√£o. Podem ser classificados:
 
+**Carneiro:** Macho adulto, inteiro, denti√ß√£o definitiva completa (8 dentes). Carca√ßa com baixo valor comercial, colora√ß√£o escura e gosto forte.
+**Ovelha:** F√™mea adulta, denti√ß√£o definitiva. Carca√ßa com peso m√≠nimo de 16 kg.
+**Borrego(a):** Filhotes de 7 a 15 meses, dentes de leite at√© denti√ß√£o definitiva. Carca√ßa m√≠nima de 15 kg.
+**Cordeiro(a):** Filhotes at√© 7 meses, todos os dentes de leite. Carca√ßa m√≠nima de 6 kg.
+
+---
+
+## RA√áAS DE OVINOS
+
+### Ra√ßas Especializadas em Leite
+
+**Lacaune:** 150-250 kg de leite/lacta√ß√£o; 180-200 dias de lacta√ß√£o; 7,5% gordura; boa adapta√ß√£o √† ordenha mec√¢nica; carne de cordeiros de alta qualidade.
+**East Friesian:** 380-450 kg/lacta√ß√£o (at√© 520L em selecionados); 220 dias de lacta√ß√£o; 5-6% gordura; boa adapta√ß√£o √† ordenha mec√¢nica; at√© 4 filhotes/parto.
+**Bergam√°cia:** ~250 kg de leite/lacta√ß√£o; 160 dias de lacta√ß√£o; 6% gordura; animais r√∫sticos adaptados a regi√µes secas; carca√ßa de baixo valor comercial.
+
+### Ra√ßas Especializadas em Carne
+
+**Suffolk:** Grande adapta√ß√£o clim√°tica; necessita boa alimenta√ß√£o; facilidade de parto; rendimento de carca√ßa 45-48%; ganho de peso de 250-600 g/dia; boa habilidade materna; carca√ßas magras.
+**Ile de France:** Carca√ßa pesada e de qualidade; bom desenvolvimento muscular nas regi√µes nobres (pernil, lombo, paleta); aos 60 dias pesam 20-23 kg; ganho m√©dio de 287 g/dia dos 30-70 dias.
+**Hampshire Down:** Boa adapta√ß√£o; cordeiros bem alimentados atingem 35 kg aos 3-4 meses; rendimento de carca√ßa 45-50%; geralmente apenas uma cria.
+**Texel:** R√∫stica, boa em extensivo/semi-intensivo; 1,6-2 cordeiros/ovelha; carca√ßa com pouca gordura; machos podem atingir 27 kg aos 70 dias.
+**Dorper:** Bem adaptado ao clima brasileiro; exig√™ncias nutricionais moderadas; cordeiros podem chegar a 36 kg aos 3-4 meses; ganho de 160-200 g/dia; 1,1-1,7 cordeiros/ovelha; boa habilidade materna.
+**Morada Nova:** Nativa do Nordeste; bastante r√∫stica; carne e pele de boa aceita√ß√£o; animais pequenos; sem sazonalidade reprodutiva.
+**Santa In√™s:** R√∫stica; grande porte; prol√≠fera com partos duplos frequentes; excelente capacidade leiteira; sem sazonalidade reprodutiva.
+
+### Animais Sem Ra√ßa Definida (SRD)
+Muito resistentes a verminose; adapta√ß√£o f√°cil a qualquer regi√£o; sem sazonalidade na reprodu√ß√£o; aquisi√ß√£o barata. Alguns mostram bom potencial leiteiro ‚Äî necess√°ria sele√ß√£o ou cruzamento com ra√ßas especializadas.
+
+---
+
+## CRUZAMENTOS
+
+### Cruzamento Industrial
+Duas ra√ßas diferentes ‚Üí cordeiro F1. Reprodutor especializado (carne ou leite) √ó f√™mea r√∫stica/resistente.
+Benef√≠cios: animais produtivos e resistentes; menor gasto de aquisi√ß√£o; melhores caracter√≠sticas maternas.
+
+### Cruzamento Triplo (Tri-cross)
+F√™meas F1 como matrizes ‚Üí cobertas por machos puros de terceira ra√ßa.
+Benef√≠cios: dupla explora√ß√£o (matrizes leiteiras + cordeiros para abate); peso elevado √† desmama.
+
+### Cruzamento Absorvente
+Substitui√ß√£o gradual de ra√ßa: a partir da 5¬™ gera√ß√£o, cordeiros s√£o considerados puros por cruzamento. Permite formar rebanho puro a partir de mesti√ßos.
+
+---
+
+## SISTEMAS DE PRODU√á√ÉO
+
+### Extensivo Tradicional
+Animais soltos no pasto sem instala√ß√µes grandiosas. Desvantagens: baixa produtividade; grandes extens√µes de terra; risco de preda√ß√£o.
+
+### Extensivo com Piquetes
+Pastagens divididas com rota√ß√£o. Vantagens: descanso da pastagem; evita destrui√ß√£o de brotos; menor contamina√ß√£o por vermes; maior controle.
+
+### Semi-intensivo
+Soltos de manh√£ (ap√≥s 9h ‚Äî reduz contamina√ß√£o de larvas); presos √† tarde/noite. Vantagens: melhores √≠ndices produtivos; melhor controle sanit√°rio; menor risco de preda√ß√£o. Desvantagem: necessita abrigos, bebedouros, cochos e cercas.
+
+### Intensivo (Confinamento)
+Animais confinados, alimenta√ß√£o fornecida nos cochos. Vantagens: maior produtividade/animal; maior produ√ß√£o/√°rea; melhor acompanhamento/preven√ß√£o de doen√ßas. Desvantagens: alto custo; maior m√£o de obra.
+
+---
+
+## INSTALA√á√ïES
+
+### Aprisco
+Galp√£o para abrigar animais √† noite ou confinamento. Terreno bem drenado; ventila√ß√£o adequada; sentido Leste-Oeste; piso de terra batida, ripado ou com cama (serragem, feno, casca de arroz); comedouros protegidos.
+**ATEN√á√ÉO:** Local para ovelhas em lacta√ß√£o e gesta√ß√£o avan√ßada.
+
+### Curral de Manejo
+Conten√ß√£o para vermifuga√ß√£o, vacina√ß√£o, pesagem, casqueamento. 1 m¬≤ por animal; piso de terra batida ou cimento.
+**Tronco/brete:** 30cm base inferior, 50cm base superior, 80cm altura.
+**Pedil√∫vio:** Entrada dos currais, profundidade 3-5 cm, solu√ß√£o de sulfato de zinco.
+**Banheira/corredor sarnicida:** Combate piolho e sarna.
+
+### Abrigo Noturno
+Cercado simples (tela/madeira) na √°rea central das pastagens. Prote√ß√£o contra preda√ß√£o.
+
+### Confinamento (Cordeiros)
+Baia grande pr√≥ximo ao aprisco. ~0,60 m¬≤ por cordeiro at√© 30 kg. Cama de feno, palha de arroz ou serragem. Comedouros protegidos.
+
+### Sala de Ordenha (Leite)
+Azulejo ou tinta lav√°vel at√© meia parede; acesso a √°gua/pia; rampa ou fosso para ordenha.
+
+---
+
+## NUTRI√á√ÉO
+
+### Alimentos Volumosos (alto teor de fibra, baixo valor energ√©tico)
+
+**Pastagem:** Forma mais econ√¥mica. Esp√©cies recomendadas: Cynodon (coast-cross, tiftons, estrelas), Panicum (aruana, tanz√¢nia, massai, √°ries). EVITAR: Brachiaria decumbens (intoxica√ß√£o/fotossensibiliza√ß√£o).
+**Capim picado:** Valor nutritivo quando colhido entre 35-45 dias (1,5-1,7m altura). 8-12% PB, 55-60% NDT. Produz 120-300 ton mat√©ria verde/ha/ano.
+**Cana-de-a√ß√∫car:** Alta produtividade. Rica em energia, pobre em prote√≠na. Usar com farelos ou ureia (0,5-1,0%). Para animais menos exigentes.
+**Silagem de milho:** Fonte de energia, baixo teor proteico ‚Äî suplementar com farelo de soja/algod√£o/ureia. 30-50 ton/ha.
+**Silagem de capim:** Bom valor nutritivo se colhido precocemente. Dificuldade: alto teor de umidade. Adicionar milho mo√≠do ou polpa c√≠trica (5-10%).
+**Feno:** Coast-cross, Tifton, Rhodes, √Åries, Aruana ‚Äî colher com 28-40 dias. Bom feno: cor esverdeada, muitas folhas, macio, >10% PB.
+**Feij√£o guandu:** Excelente volumoso. Rico em prote√≠na e c√°lcio. Suscet√≠vel √† geada; replantio a cada 2 anos.
+**Amoreira:** Alta palatabilidade, 22% PB, ~50 ton mat√©ria verde/ha/ano. Corte entre 45-60 dias no ver√£o.
+**Palma forrageira:** Importante para secas prolongadas. 80 ton mat√©ria verde/ha/corte. Baixa prote√≠na e fibra. Faixa ideal: 16-25¬∞C, 360-800mm precipita√ß√£o.
+
+### Alimentos Concentrados (<18% fibra bruta, alto teor energ√©tico)
+
+**Milho:** Energ√©tico, rico em amido, pobre em prote√≠na e c√°lcio. Combinar com farelos de oleaginosas.
+**Farelo de soja:** ~44% PB, 1% extrato et√©reo. Priorizar para ovelhas em lacta√ß√£o e cordeiros.
+
+### Subprodutos
+
+**Polpa c√≠trica:** 70-75% NDT (similar ao milho). Alto c√°lcio, baixo f√≥sforo/prote√≠na. Usar quando pre√ßo ‚â§85% do milho.
+**Caro√ßo de algod√£o:** Rico em √≥leo, energia, prote√≠na e fibra. **N√ÉO DAR A REPRODUTORES** (gossipol ‚Üí infertilidade). Para ovelhas: 200-500 g/dia, per√≠odos curtos.
+**Res√≠duo de cervejaria:** 23-28% PB. √ömido: at√© 3 kg/ovelha/dia. Degrada√ß√£o r√°pida ‚Äî usar em 5 dias.
+
+### Sal Mineral
+Indispens√°vel. Sempre √† disposi√ß√£o. **USAR ESPEC√çFICO PARA OVINOS** ‚Äî sal de outras esp√©cies pode intoxic√°-los.
+
+### √Ågua
+
+| Categoria | Litros/dia |
+| :--- | :--- |
+| Carneiros | 7,5 |
+| Ovelhas secas | 7,5 |
+| Ovelhas em lacta√ß√£o | 11,0 |
+| Cordeiros em aleitamento | 0,5 |
+| Cordeiro em recria | 6,0 |
+
+---
+
+## SELE√á√ÉO DE REPRODUTORES
+
+### Carneiros
+Avaliar: escritura√ß√£o zoot√©cnica; idade 1-5 anos; libido; estado alerta/ativo; dentes perfeitos; narinas/olhos limpos; locomo√ß√£o normal, bons aprumos; test√≠culos grandes e bem posicionados; apar√™ncia masculina; boa cobertura muscular sem excesso de gordura; garupa comprida e larga.
+**Ao chegar:** vermifugar e vacinar. Transi√ß√£o alimentar suave. Suplementar com concentrado na esta√ß√£o de monta.
+
+### Ovelhas Matrizes
+Avaliar: estado sanit√°rio; padr√£o racial; aspecto feminino; conforma√ß√£o de √∫bere (2 tetas, n√£o muito grandes); cascos sadios; idade compat√≠vel (evitar >3 anos sem parir); aus√™ncia de defeitos. Ultrassonografia recomendada para matrizes de alto valor gen√©tico.
+Ovelhas secas em pasto de qualidade = apenas sal mineral necess√°rio. Em lacta√ß√£o/final gesta√ß√£o = volumoso de qualidade + suplementa√ß√£o.
+
+---
+
+## REPRODU√á√ÉO
+
+### Ciclo Estral
+Dura√ß√£o m√©dia: 17 dias (14-19 dias), com m√∫ltiplas ovula√ß√µes.
+Sinais de cio: vulva corada e maior; elimina√ß√£o de l√≠quido grosso; tend√™ncia a ficar pr√≥ximo ao macho. Cio pouco vis√≠vel sem presen√ßa do macho.
+
+### Sistemas de Acasalamento
+**Monta natural:** Mais simples, menor efici√™ncia reprodutiva, menor controle de doen√ßas.
+**Monta controlada:** F√™mea no cio √© juntada ao reprodutor. Uso de rufi√£o para detec√ß√£o. Maior m√£o de obra.
+**Insemina√ß√£o artificial:** Maior ganho gen√©tico; controle de doen√ßas; uso de material gen√©tico superior. Requer profissional qualificado.
+
+### Controle de Monta (por cores)
+Per√≠odo de 60 dias. Pintar peito do carneiro com tinta p√≥ xadrez em graxa. Trocar cor a cada 15 dias: amarelo ‚Üí verde ‚Üí vermelho ‚Üí preto. Anotar dia da marca√ß√£o.
+
+### Flushing
+Suplementar ovelhas 2 semanas antes da reprodu√ß√£o por 4 semanas. Aumenta n√∫mero de f√™meas em cio e quantidade de crias/ovelha.
+
+---
+
+## ESCORE DE CONDI√á√ÉO CORPORAL (ECC)
+
+Medida subjetiva de gordura/energia reservada. Regi√£o lombar. Escala de 1 a 5.
+
+**ECC 1:** Magreza extrema. Ossos totalmente vis√≠veis e palp√°veis. Costelas vis√≠veis.
+**ECC 2:** Animal magro. Ossos bastante vis√≠veis. Costelas com pouca cobertura.
+**ECC 3:** Ideal. Suave cobertura muscular. Ossos pouco vis√≠veis. Costelas quase cobertas.
+**ECC 4:** Animal gordo. Boa cobertura muscular. Gordura na base da cauda. Costelas cobertas.
+**ECC 5:** Muito gordo. Apar√™ncia arredondada. Camadas de gordura. S√≥ aceit√°vel para abate.
+
+| Categoria | ECC Desej√°vel |
+| :--- | :--- |
+| Cordeiras e Borregas | 2,5 a 3 |
+| Ovelhas in√≠cio de gesta√ß√£o | 3 |
+| Ovelhas final de gesta√ß√£o | 3,5 |
+| Ovelhas em lacta√ß√£o | 2,5 |
+| Rebanho geral | 3 a 4 |
+
+**ATEN√á√ÉO:** ECC n√£o se altera rapidamente. Monitorar em todas as fases. Animais muito magros ou gordos demais demoram mais para chegar ao escore adequado.
+
+---
+
+## GESTA√á√ÉO E PARTO
+
+### Gesta√ß√£o
+Dura√ß√£o m√©dia: **150 dias**. Cuidados especiais necess√°rios.
+
+### Gesta√ß√£o Avan√ßada (30 dias antes do parto)
+- Alimenta√ß√£o de melhor qualidade
+- Casqueamento
+- Exame do √∫bere
+- Vermifuga√ß√£o (usar verm√≠fugos que N√ÉO causem aborto)
+- Vacina√ß√£o para clostridioses
+- Mover para piquete/baia maternidade
+
+### Sinais de Parto
+Vulva e √∫bere inchados; procura local para parir; alguns berram; rompimento da bolsa.
+
+### Aux√≠lio ao Parto
+Luva de palpa√ß√£o; limpar vulva; lubrificar; introduzir 2 dedos com cuidado; avaliar posi√ß√£o das patas; puxar levemente (N√ÉO for√ßar). Chamar veterin√°rio ap√≥s 2 horas sem nascimento.
+
+---
+
+## CUIDADOS COM CORDEIROS
+
+### Rec√©m-nascido
+1. Verificar se est√° ativo (berra e tenta levantar). Se n√£o responder: limpar narinas e boca.
+2. Observar se a m√£e faz limpeza (lamba o filhote). Se rejeitar: enxugar com papel toalha.
+3. Verificar tentativa de mamar. Se n√£o mamar: segurar ovelha e estimular; alimentar por mamadeira se necess√°rio.
+4. Cortar umbigo a 5 cm. Mergulhar em iodo 10% por 30 seg. Repetir por 2 dias.
+
+### Colostro
+Ingerir o mais r√°pido poss√≠vel ‚Äî imunidade diminui com o tempo. Quantidade: **10% do peso vivo** nas primeiras 24h (ex: cordeiro de 3 kg = 300 ml). Dividir em v√°rias mamadas.
+
+### Aleitamento Artificial (para leite)
+1¬™ semana: leite de vaca puro 4x/dia
+2¬™ semana: leite de vaca 3x/dia + concentrado
+3¬™ semana at√© desmame: leite 2x/dia + concentrado + volumoso de qualidade
+Fornecer ~10% do peso vivo, morno, sem for√ßar consumo.
+
+### Alimenta√ß√£o de Cordeiros
+Lactentes at√© 7-10 dias. Depois iniciam s√≥lidos. Fornecer concentrado e feno ap√≥s 1¬™ semana. Usar cercado exclusivo (creep-feeding).
+
+### Tipos de Desmame
+
+**Desmame precoce (leite):** Separa√ß√£o ao nascer ou logo ap√≥s colostro. Todo leite para o produtor.
+**Desmame controlado (leite):** Separa√ß√£o noturna; mamam pela manh√£ ap√≥s ordenha. Desmame com 25-45 dias.
+**Desmame precoce (corte):** ~45 dias. Ganho m√©dio de 200 g/dia.
+**Desmame tardio (corte):** 70 dias. **N√£o recomendado** ‚Äî alta mortalidade por verminose, ganho <100 g/dia.
+**Desmame super tardio:** >90 dias (leite) ou >90 dias com mamadas controladas (corte). Invi√°vel para produ√ß√£o eficiente.
+
+---
+
+## CONTROLE SANIT√ÅRIO
+
+### Sintomas de Animais Doentes
+Tristeza; isolamento; apetite reduzido ou depravado (comer areia, pl√°stico, ossos); ficam por √∫ltimo no rebanho; queda/falta de brilho nos pelos; temperatura >40¬∞C ou <36¬∞C; fezes pastosas/diarreia; urina escura/cheiro incomum; atraso no crescimento.
+
+### Preven√ß√£o
+- N√£o comprar animais ap√°ticos, doentes ou n√£o vacinados
+- Inspecionar constantemente o rebanho
+- Isolar imediatamente animais doentes
+- Chamar veterin√°rio quando n√£o identificar a doen√ßa
+- Realizar corte de cascos, pedil√∫vio, tosquias especiais (cascarreio)
+
+### Calend√°rio de Vacina√ß√£o
+
+**Raiva:** 4 meses + refor√ßo em 30 dias. Adultos: anualmente.
+**Clostridioses:** 2 meses + refor√ßo em 30 dias. Adultos: anualmente. F√™meas prenhas: 4¬∞ m√™s. Inclui enterotoxemia e t√©tano.
+**Linfadenite Caseosa:** 3 meses + refor√ßo em 30 dias. Adultos: anualmente.
+
+### Combate √† Verminose (CR√çTICO PARA PREVIS√ÉO CLIM√ÅTICA)
+- Rebaixar forragem para exposi√ß√£o solar/ventila√ß√£o ‚Üí diminui larvas
+- Rota√ß√£o de pastagem
+- 3 vermifuga√ß√µes estrat√©gicas: ter√ßo final da gesta√ß√£o (N√ÉO usar closantel/organofosforado), logo ap√≥s parto, no desmame
+- Exames de fezes peri√≥dicos (OPG) em 5-10% dos animais
+- Verm√≠fugos conforme necessidade e orienta√ß√£o t√©cnica
+- Avaliar efic√°cia do verm√≠fugo anualmente (teste de redu√ß√£o de ovos)
+- **N√ÉO misturar adultos e jovens no mesmo pasto**
+- Cordeiros rec√©m-desmamados: confinamento por 5-6 meses OU pastos descansados
+- **EVITAR pastos em baixadas e terrenos alagadi√ßos**
+- Pastejo consorciado com bovinos/equinos quando poss√≠vel
+- Descartar animais com sintomas frequentes de verminose (anemia, papeira, caquexia)
+
+---
+
+## ORDENHA (Produ√ß√£o de Leite)
+
+### Ordenha Manual
+Lavar m√£os; breve ordenha inicial para limpar ducto; balde sob √∫bere; envolver tetas; espremer em movimento para baixo.
+
+### Ordenha Mec√¢nica
+Ligar ordenhadeira; ordenha manual inicial para limpar ducto; encaixar teteiras; massagem leve no √∫bere; observar fluxo; fechar coletor quando cessar. Repasse ap√≥s 5 minutos. Lavar mangueiras ap√≥s cada ordenha.
+
+### Higiene
+**Pr√©-dipping:** Imers√£o em desinfetante antes da ordenha. Iodo 0,25%, clorexidine 0,25-0,5%, ou cloro 0,2%.
+**Teste de Mastite:** Palpa√ß√£o do √∫bere (r√≠gido, quente, avermelhado = mastite). Caneca de fundo preto: 3 jatos/teta, verificar grumos, pus, sangue.
+**P√≥s-dipping:** Imers√£o em desinfetante glicerinado ap√≥s ordenha. Iodo 0,5%, clorexidine 0,5-1,0%, ou cloro 0,3-0,5%. Aplicar em todo o teto imediatamente.
+
+### Cuidados com o Leite
+Peneirar imediatamente ap√≥s ordenha. Refrigerar ou congelar se n√£o for para beneficiamento direto.
+
+---
+
+## TERMINA√á√ÉO E COMERCIALIZA√á√ÉO (Corte)
+
+### Termina√ß√£o para Abate
+Fase de confinamento com dieta balanceada para m√°ximo ganho de peso. Ra√ßas de carne: abate com 28-30 kg, 4-5 meses de idade.
+
+### Mercado
+Carne de cordeiro √© produto nobre. Mercado consumidor concentrado no Sudeste. No Nordeste/Norte: subsist√™ncia e fonte de prote√≠na.
+**Desafios:** abate clandestino; baixo padr√£o racial; irregularidade no fornecimento; pre√ßos elevados.
+Frigor√≠ficos exigem padr√£o racial e quantidade m√≠nima. Cooperativas/associa√ß√µes ajudam na comercializa√ß√£o.
+
+### Derivados do Leite
+Mercado direcionado a classes A/B. Queijos especiais (Roquefort, Pecorino, Feta). Venda in natura ou beneficiamento na propriedade.
 `;
-
-
-// Conte√∫do importado do PDF: CT-02-Dez-1985.pdf
-knowledgeBase += ` 
-
-=================
-ARQUIVO: CT-02-Dez-1985.pdf
-=================
-Aqui est· a transcriÁ„o perfeita do documento e, em seguida, a extraÁ„o limpa e estruturada das regras e guias relativas ‡ ovinocultura, esquila e manejo animal.
-
----
-
-## TranscriÁ„o Perfeita do Documento
-
-Empresa Brasileira de Pesquisa Agropecu·ria ñ EMBRAPA
-Vinculada ao MinistÈrio da Agricultura
-Unidade de ExecuÁ„o de Pesquisa de ¬mbito Estadual de BagÈ
-UEPAE de BagÈ
-BR 153 Km 141
-Caixa Postal 242
-96400 BagÈ, RS
-
-ISSN 0100-8919
-
-**COMUNICADO T…CNICO**
-
-N∫ 2, dez/85, p.1-6.
-
-**ASPECTOS A CONSIDERAR NA TOSQUIA DOS OVINOS**
-
-Arturo Bernardo Selaive-Villarroelπ
-
-A tosquia È a colheita da l„. Representa o fruto de um ano de produÁ„o, constituindo uma das pr·ticas de maior atividade na propriedade rural. … uma operaÁ„o importante em funÁ„o dos efeitos fÌsicos que exerce no animal como na prÛpria l„ que ele produz. Uma boa programaÁ„o permite melhorar a eficiÍncia da tosquia e a manipulaÁ„o dos velos. Nesta, o produtor deve considerar, entre outros, os seguintes aspectos: qual È a melhor Època para tosquiar os ovinos? È de interesse tosquiar os cordeiros? em que ordem os animais devem ser tosquiados? na ocasi„o da tosquia, quais s„o os cuidados com a l„ para evitar a depreciaÁ„o dos velos?
-
-Nas respostas a estas perguntas deve-se considerar uma sÈrie de fatores que influem na l„ e no manejo do rebanho.
-
-**QUANDO TOSQUIAR?**
-
-A decis„o da Època de tosquia est· fortemente influenciada por fatores clim·ticos e/ou de manejo. Tradicionalmente, os ovinos no Rio Grande do Sul s„o tosquiados anualmente na primavera, principalmente nos meses de outubro-novembro, apÛs a pariÁ„o e antes do desmame dos cordeiros, quando as chuvas e/ou frio de inverno passaram e antes da Època de incidÍncia de bicheiras.
-
----
-πMed.Vet., Ph.D. EMBRAPA/Unidade de ExecuÁ„o de Pesquisa de ¬mbito Estadual de BagÈ (UEPAE de BagÈ), Caixa Postal 242, CEP 96400 BagÈ, RS.
-
----
-1/1, UEPAE de BagÈ, dez/85, p.2
-**COMUNICADO T…CNICO**
-
-ras. As condiÁıes clim·ticas com tempo frio, chuva e vento, cinco a sete dias apÛs a tosquia, podem ocasionar mortalidade de atÈ 20-25% do rebanho, afetando principalmente as ovelhas com cria, velhas e/ou magras.
-
-Em geral as ovelhas podem ser tosquiadas em 3 Èpocas diferentes do ciclo de produÁ„o:
-1) antes do acasalamento (tosquia de outono);
-2) antes da pariÁ„o (tosquia prÈ-parto);
-3) antes ou durante o desmame dos cordeiros (tosquia de primavera).
-
-Diversos trabalhos de pesquisa tÍm avaliado o efeito da Època de tosquia na produÁ„o de l„ e fertilidade das ovelhas. Estudos realizados nos estados do Rio Grande do Sul e S„o Paulo, em que foram comparadas duas Èpocas de tosquia (primavera e outono) em ovelhas da raÁa Corriedale, n„o foram observadas diferenÁas significativas na produÁ„o de l„ e no comportamento reprodutivo, porÈm houve diferenÁa na qualidade dos velos. As ovelhas com tosquia na primavera apresentaram uma maior incidÍncia de velos com capacho e as tosquiadas no outono uma maior incidÍncia de velos amarelos. Por outro lado, fatores como condiÁıes clim·ticas mais favor·veis apÛs tosquia, a maior idade das cordeiras e borregas na tosquia, consequentemente com mais l„, e a menor quantidade de l„ que possuem as ovelhas no momento da pariÁ„o, s„o aspectos favor·veis para a tosquia de outono.
-
-Todavia, a tosquia prÈ-parto È a que apresenta maiores vantagens em termos de qualidade de velo e facilidade no manejo do rebanho. Esta pr·tica n„o È empregada no Rio Grande do Sul, salvo raras exceÁıes, pelas condiÁıes clim·ticas adversas que ocorrem no perÌodo prÈ-pariÁ„o das ovelhas, porÈm, a pesquisa tem mostrado que o uso de capas protetoras, que podem ser feitas de sacos de adubo, por 2-3 semanas apÛs a tosquia, constitui uma soluÁ„o para o problema. As vantagens e desvantagens das diferentes Èpocas de tosquia dos ovinos no estado do Rio Grande do Sul s„o mostradas ao final do texto.
-
-De uma maneira geral, pode-se dizer que a Època da tosquia n„o influi significativamente na quantidade de l„ produzida, mas tem efeito na qualidade do velo e, fundamentalmente, no manejo do rebanho, principalmente para os cordeiros.
-
-O aumento na frequÍncia das tosquias pode aumentar a produÁ„o de l„. Em alguns paÌses tÍm sido observados, em ovelhas falhadas, aumentos na produÁ„o de l„ de atÈ 15%, com duas tosquias por ano. Em nosso meio, n„o existem trabalhos de pesquisa que permitam preconizar um maior n˙mero de tosquias por ano, embora o preÁo da l„ de "retosa" (6 meses de crescimento) corresponda a mais de 60% do valor do velo (12 meses de crescimento), j· descontado o
-
----
--11, UEPAE de BagÈ, dez/85, p.3
-**COMUNICADO T…CNICO**
-
-valor da tosquia extra. ObservaÁıes pessoais do autor em ovinos de "cabanha", onde as condiÁıes de criaÁ„o s„o superiores a mÈdia dos rebanhos gerais, e onde a finalidade principal da exploraÁ„o È a venda de reprodutores, a pr·tica de duas tosquias por ano mostrou-se favor·vel em funÁ„o do manejo do rebanho.
-
-**A TOSQUIA DO CORDEIRO**
-
-… bastante generalizado o argumento de que os cordeiros, apÛs a tosquia, apresentam um maior desenvolvimento corporal. Entretanto, alguns sustentam que a tosquia dos cordeiros n„o compensa, pela reduzida quantidade de l„ obtida e o custo da operaÁ„o. Somente nos campos com problemas de semente ("flechilha", trevo carretilha) È un‚nime a opini„o da necessidade de tosquiar os cordeiros.
-
-No estado do Rio Grande do Sul, o manejo dos cordeiros n„o recebe a devida atenÁ„o, por este motivo, o produtor muitas vezes desconhece a convivÍncia ou n„o de tosquiar os cordeiros, assim como da idade ou da Època mais apropriada para isso. As respostas a essas perguntas variam segundo a finalidade comercial dos cordeiros. Aqueles que v„o ser vendidos na Època de Natal, com 3-4 meses de idade e ainda n„o desmamados, n„o convÈm serem tosquiados. Os destinados para venda com aproximadamente 8 meses de idade (borreg„o) È conveniente tosqui·-los no outono (marÁo-abril) e abatÍ-los entre 30 a 45 dias mais tarde para obtenÁ„o de peles de melhor qualidade. Aqueles a serem comercializados com aproximadamente 14-16 meses de idade (2 dentes), convÈm tosqui·-los pela primeira vez apÛs desmame e/ou na primavera do ano seguinte (setembro-outubro) e vendÍ-lo no ver„o (novembro-dezembro).
-
-Tratando-se de cordeiras a serem retidas no rebanho, a tosquia deve ser feita considerando a Època das ovelhas. Quando se faz tosquia de outono ou tosquia prÈ-parto, as cordeiras s„o esquiladas no ano seguinte, junto com as ovelhas. No caso das ovelhas serem tosquiadas na primavera, as cordeiras podem ser tosquiadas junto com as ovelhas quando apresentarem bom desenvolvimento, caso contr·rio devem ser tosquiadas ao desmame (ver„o), geralmente no mÍs de janeiro.
-
-**ORDEM DE TOSQUIA DOS ANIMAIS**
-
-Os ovinos devem ser tosquiados separadamente por categoria (idade e
-
----
-1, UEPAE de BagÈ, dez/85, p.4
-**COMUNICADO T…CNICO**
-
-sexo) e por raÁa quando houver mais de uma. A ordem na qual os animais devem ser tosquiados depende das circunst‚ncias de cada propriedade, mas È aconselh·vel iniciar pelos capıes, seguidos das borregas e os cordeiros desmamados. As ovelhas com cordeiro ao pÈ geralmente s„o tosquiadas ao final, evitando de ficarem separados por mais de um dia. Quando o n˙mero de ovelhas no rebanho for muito grande, recomenda-se encerrar diariamente grupos delas com seus respectivos cordeiros, tosquiando-se primeiro as ovelhas e terminando-se o dia com os cordeiros. Os carneiros, rufiıes e ovelhas de consumo podem ser tosquiados em hor·rios de maneira a preencher uma jornada de trabalho, em continuaÁ„o ao tÈrmino de uma categoria animal, caso contr·rio, podem ser tosquiados ao final da programaÁ„o.
-
-Os animais devem ser encerrados pelo menos com 12 horas de antecedÍncia a fim de evitar o excesso de fezes e urina no momento da tosquia.
-
-**CUIDADOS NA TOSQUIA**
-
-A ind˙stria tÍxtil estabelece determinados requerimentos tÈcnicos e, em definitivo, o preÁo da l„. AlÈm das caracterÌsticas de finura, comprimento, cor e resistÍncia da mecha, a valorizaÁ„o da l„ est· ligada ‡ apresentaÁ„o do produto, sendo a preparaÁ„o do velo um aspecto importante para a obtenÁ„o de melhores preÁos na comercializaÁ„o. Do ponto de vista comercial e tÍxtil È prejudicial incluir no velo categorias de l„ inferior como a de barriga, pata, pontas queimadas, quarto grosso, etc. A limpeza ou "descole" das ovelhas antes da tosquia contribui para melhorar a apresentaÁ„o do velo. Os "recortes" ou "segundo cortes" efetuados na tosquia do animal diminuem a qualidade comercial do produto.
-
-As cooperativas de l„s recomendam os seguintes cuidados para evitar a depreciaÁ„o dos velos:
-a) antes da tosquia do animal:
-- n„o esquilar l„s ˙midas; deixar um lote de animais em ·rea coberta durante a noite anterior a tosquia;
-- recortar "pontas queimadas" e "cascarrias"; as mechas "coloridas" provenientes de pontas queimadas pela urina, n„o saem ao lavado e originam problemas no tingimento.
-b) durante a tosquia do animal:
-- esquilar sobre grade de madeira, mantendo a cancha sempre limpa;
-- evitar os recortes; estes s„o eliminados no lavado e penteagem da l„,
-
----
-1, UEPAE de BagÈ, dez/85, p.5
-**COMUNICADO T…CNICO**
-
-constituindo-se num subproduto de pouco valor. O recorte poderia ficar no animal evitando n„o sÛ uma perda ao produtor, como tambÈm o tempo do esquilador;
-c) apÛs tosquia do animal:
-- n„o misturar no velo outras categorias de l„ como pata, barriga e pontas queimadas. Antes de atar os velos, retirar mechas de l„ preta, manchadas e pontas queimadas;
-- atar o velo colocando a l„ da regi„o do centro do velo (costelas) para o lado de fora; isto facilita a classificaÁ„o da finura mÈdia do velo;
-- atar os velos somente com fios de papel ou com a mesma l„; o fio de sisal solta fibras que prejudicam o tingimento da l„;
-- embolsar a l„ por categoria e imediatamente apÛs a tosquia do animal; embolsar separadamente a l„ das ovelhas de cria, borregas, capıes, carneiros. O embolse imediato facilita a classificaÁ„o, evita o sujar a l„ e o desatar dos velos;
-- evitar o excesso de velos numa mesma bolsa; produz rasgos nos velos;
-- conservar as bolsas em piso seco, preferencialmente sobre estrados de madeira e ao abrigo do tempo.
-
-**CONSIDERA«’ES GERAIS**
-
-A tosquia È uma das pr·ticas que provoca maior "stress" nos ovinos pela movimentaÁ„o, imobilizaÁ„o, isolamento e remoÁ„o da l„. Esta, funciona como isolante tÈrmico protegendo ao animal tanto do frio como do calor e, ao ser removida, deixa o mesmo exposto ‡s condiÁıes clim·ticas do ambiente que podem ser fatais. Para compensar a perda da cobertura de l„, a pele engrossa atingindo o m·ximo duas semanas apÛs a tosquia. Nesse perÌodo, as ovelhas v„o aumentando o consumo alimentar para compensar a maior necessidade de energia. Resultados de pesquisa tÍm mostrado um aumento no consumo alimentar pÛs-tosquia entre 5-30% por um perÌodo aproximadamente de 2 meses, embora em climas frios observa-se uma depress„o inicial nas primeiras 48 horas.
-
-O perÌodo crÌtico pÛs-tosquia dos animais È de aproximadamente 15 dias e um bom manejo pode evitar possÌveis riscos. Recomenda-se esquilar os ovinos quando estes est„o ganhando peso, n„o esquilar cordeiros muito pequenos e terminar a tosquia das ovelhas de cria em tempo h·bil para facilitar o reencontro com os cordeiros antes do anoitecer.
-
-A depreciaÁ„o que tem as l„s no mercado deve-se principalmente ao excesso
-
----
-1, UEPAE de BagÈ, dez/85, p.6
-**COMUNICADO T…CNICO**
-
-cesso de recortes e a presenÁa de mechas "coloridas". Um bom controle do trabalho na mesa do "atador" e um adequado condicionamento do velo contribuem para a valorizaÁ„o do produto. A tosquia se faz uma vez ao ano e, pelo que ela representa, deve receber uma programaÁ„o e execuÁ„o adequada por parte do produtor.
-
-**VANTAGENS E DESVANTAGENS DAS DIFERENTES …POCAS DE TOSQUIA DOS OVINOS NO ESTADO DO RIO GRANDE DO SUL**
-
-| …poca de Tosquia                | Vantagens                                                                                                                                                                                                                                                                  | Desvantagens                                                                                                                                                                                                                                                                                                |
-| :------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Antes do acasalamento (Tosquia de outono) | - Menor incidÍncia de velos com capacho; - Fatores clim·ticos mais favor·veis apÛs a tosquia; - Tosquia de cordeiros e borregas com mais l„; - Ovelhas com menos l„ durante a pariÁ„o; - …poca mais favor·vel do banho apÛs tosquia.                                 | - Maior incidÍncia de velos amarelados; - Maior incidÍncia de bicheiras antes da tosquia; - ComercializaÁ„o da l„ tardia.                                                                                                                                                                                                |
-| Antes da pariÁ„o (Tosquia de inverno)     | - Melhora a qualidade de velos; - Ovelhas parem com maior facilidade e amamentam melhor os cordeiros; - Tosquia de ovelhas sem cordeiro ao pÈ; - Menor risco de cortes de tetos; - F·cil identificaÁ„o de ovelhas falhadas para separaÁ„o.                       | - Mortalidade de ovelhas pelas condiÁıes clim·ticas adversas no inverno; - As chuvas de inverno poder„o estender o perÌodo de tosquia; - Impossibilidade de banho apÛs tosquia.                                                                                                                                            |
-| Antes ou durante o desmame (Tosquia primavera/ver„o) | - Menor incidÍncia de velos com amarelo; - Reduz a incidÍncia de bicheiras no ver„o; - Pode ser conjugada com desmame dos cordeiros; - Maior disponibilidade de m„o-de-obra; - Possibilidade de banho imediato; - CoincidÍncia com a Època de maior comercializaÁ„o da l„. | - Maior incidÍncia de velos acapachados; - Maior incidÍncia de ovelhas deitadas durante a pariÁ„o; - Abandono de cordeiros no caso de tosquia antes do desmame; - Excesso de cortes na tosquia favorece incidÍncia de bicheiras.                                                                                        |
-
----
-
-## Regras e Guias para Ovinocultura, Esquila e Manejo Animal
-
-As seguintes regras e guias foram extraÌdas do documento, estruturadas por tÛpicos para facilitar a compreens„o:
-
-### I. Planejamento Geral da Tosquia
-
-*   **ProgramaÁ„o:** Uma boa programaÁ„o È essencial para melhorar a eficiÍncia da tosquia e a manipulaÁ„o dos velos.
-*   **An·lise PrÈvia:** O produtor deve considerar a melhor Època, o interesse em tosquiar cordeiros, a ordem de tosquia dos animais e os cuidados com a l„ para evitar sua depreciaÁ„o.
-*   **Fatores Influenciadores:** As decisıes devem considerar fatores clim·ticos e de manejo que afetam a l„ e o rebanho.
-*   **FrequÍncia:** A tosquia geralmente È realizada uma vez ao ano. No entanto, em ovelhas falhadas e em "cabanhas" (com melhores condiÁıes de criaÁ„o e foco em reprodutores), a tosquia bianual (duas vezes por ano) pode ser favor·vel, aumentando a produÁ„o de l„ em atÈ 15%.
-*   **ValorizaÁ„o:** Um bom controle na mesa do "atador" e o adequado condicionamento do velo contribuem para a valorizaÁ„o do produto. A tosquia deve ter uma programaÁ„o e execuÁ„o adequadas.
-
-### II. …pocas de Tosquia
-
-A Època da tosquia n„o influi significativamente na quantidade de l„ produzida, mas afeta a qualidade do velo e o manejo do rebanho, especialmente dos cordeiros.
-
-**A. Tosquia Tradicional (Rio Grande do Sul):**
-*   **Quando:** Anualmente na primavera (outubro-novembro).
-*   **Contexto:** ApÛs a pariÁ„o e antes do desmame dos cordeiros, apÛs o perÌodo de chuvas e frio de inverno, e antes da Època de incidÍncia de bicheiras.
-*   **Risco:** CondiÁıes clim·ticas adversas (frio, chuva, vento) 5-7 dias apÛs a tosquia podem causar mortalidade de atÈ 20-25% do rebanho, especialmente em ovelhas com cria, velhas e/ou magras.
-
-**B. Principais …pocas no Ciclo de ProduÁ„o:**
-
-1.  **Antes do Acasalamento (Tosquia de Outono):**
-    *   **Vantagens:** Menor incidÍncia de velos com "capacho", fatores clim·ticos mais favor·veis apÛs a tosquia, cordeiros e borregas com mais l„, ovelhas com menos l„ durante a pariÁ„o, Època mais favor·vel para o banho pÛs-tosquia.
-    *   **Desvantagens:** Maior incidÍncia de velos amarelados, maior incidÍncia de bicheiras antes da tosquia, comercializaÁ„o da l„ tardia.
-
-2.  **Antes da PariÁ„o (Tosquia PrÈ-parto / Tosquia de Inverno):**
-    *   **Vantagens:** Melhora a qualidade dos velos, ovelhas parem com maior facilidade e amamentam melhor os cordeiros, tosquia de ovelhas sem cordeiro ao pÈ, menor risco de cortes nos tetos, f·cil identificaÁ„o de ovelhas falhadas para separaÁ„o.
-    *   **Desvantagens:** Alta mortalidade de ovelhas devido ‡s condiÁıes clim·ticas adversas no inverno (n„o È pr·tica comum no RS sem medidas protetoras), chuvas de inverno podem estender o perÌodo de tosquia, impossibilidade de banho apÛs a tosquia.
-    *   **MitigaÁ„o de Risco:** O uso de capas protetoras (sacos de adubo) por 2-3 semanas apÛs a tosquia pode ser uma soluÁ„o para as condiÁıes clim·ticas adversas.
-
-3.  **Antes ou Durante o Desmame (Tosquia de Primavera/Ver„o):**
-    *   **Vantagens:** Menor incidÍncia de velos amarelados, reduz a incidÍncia de bicheiras no ver„o, pode ser conjugada com o desmame dos cordeiros, maior disponibilidade de m„o-de-obra, possibilidade de banho imediato, coincide com a Època de maior comercializaÁ„o da l„.
-    *   **Desvantagens:** Maior incidÍncia de velos "acapachados", maior incidÍncia de ovelhas deitadas durante a pariÁ„o, abandono de cordeiros no caso de tosquia antes do desmame, excesso de cortes na tosquia favorece a incidÍncia de bicheiras.
-
-### III. Tosquia de Cordeiros
-
-*   **BenefÌcio de Desenvolvimento:** Argumenta-se que cordeiros tosquiados apresentam maior desenvolvimento corporal.
-*   **Custo vs. BenefÌcio:** A tosquia de cordeiros pode n„o compensar devido ‡ reduzida quantidade de l„ e ao custo da operaÁ„o, exceto em situaÁıes especÌficas.
-*   **Necessidade Crucial:** … un‚nime a necessidade de tosquiar cordeiros em campos com problemas de sementes ("flechilha", "trevo carretilha").
-*   **Momento Ideal (Varia com a Finalidade Comercial):**
-    *   **Venda no Natal (3-4 meses, n„o desmamados):** N„o È conveniente tosquiar.
-    *   **Venda para abate (~8 meses, borreg„o):** Tosquiar no outono (marÁo-abril) e abater 30-45 dias depois para obter peles de melhor qualidade.
-    *   **ComercializaÁ„o aos ~14-16 meses (2 dentes):** Tosquiar pela primeira vez apÛs o desmame e/ou na primavera do ano seguinte (setembro-outubro), e vender no ver„o (novembro-dezembro).
-*   **Cordeiras de ReposiÁ„o:**
-    *   **Se tosquia de outono ou prÈ-parto nas ovelhas:** Esquilar as cordeiras no ano seguinte, junto com as ovelhas.
-    *   **Se tosquia de primavera nas ovelhas:** Tosquiar as cordeiras junto com as ovelhas se apresentarem bom desenvolvimento; caso contr·rio, tosquiar ao desmame (ver„o, geralmente em janeiro).
-
-### IV. Ordem de Tosquia dos Animais
-
-*   **SeparaÁ„o por Categoria:** Os ovinos devem ser tosquiados separadamente por categoria (idade, sexo e raÁa, se houver mais de uma).
-*   **SequÍncia Aconselh·vel:** Iniciar pelos capıes, seguidos das borregas e dos cordeiros desmamados.
-*   **Ovelhas com Cordeiro ao PÈ:** Geralmente tosquiadas ao final, para evitar a separaÁ„o prolongada.
-*   **Rebanhos Grandes:** Recomenda-se encerrar diariamente grupos de ovelhas com seus cordeiros, tosquiando primeiro as ovelhas e terminando com os cordeiros no mesmo dia.
-*   **Outras Categorias:** Carneiros, rufiıes e ovelhas de consumo podem ser tosquiados em hor·rios flexÌveis para preencher a jornada de trabalho, ou ao final da programaÁ„o.
-
-### V. Cuidados na Tosquia e Manejo da L„
-
-**A. PrÈ-tosquia do Animal:**
-*   **Preparo:** A preparaÁ„o do velo È importante para obter melhores preÁos.
-*   **Limpeza:** Realizar a limpeza ou "descole" das ovelhas antes da tosquia para melhorar a apresentaÁ„o do velo.
-*   **CondiÁ„o da L„:** N„o esquilar l„s ˙midas.
-*   **Confinamento:** Deixar um lote de animais em ·rea coberta durante a noite anterior ‡ tosquia.
-*   **Higiene:** Os animais devem ser encerrados por pelo menos 12 horas antes da tosquia para evitar excesso de fezes e urina.
-*   **RemoÁ„o de Impurezas:** Recortar "pontas queimadas" (danificadas) e "cascarrias" (l„ com fezes/sujeira). Mechas "coloridas" pela urina n„o saem na lavagem e causam problemas no tingimento.
-
-**B. Durante a Tosquia do Animal:**
-*   **SuperfÌcie de Tosquia:** Esquilar sobre grade de madeira, mantendo a "cancha" (·rea de tosquia) sempre limpa.
-*   **Qualidade do Corte:** Evitar os "recortes" ou "segundos cortes", pois diminuem a qualidade comercial da l„, s„o eliminados no lavado e penteagem, e constituem subproduto de baixo valor. O recorte poderia permanecer no animal, economizando tempo do esquilador e perdas ao produtor.
-
-**C. PÛs-tosquia da L„:**
-*   **SeparaÁ„o de Categorias:** N„o misturar no velo outras categorias de l„ (pata, barriga, pontas queimadas).
-*   **RemoÁ„o de Impurezas:** Antes de atar os velos, retirar mechas de l„ preta, manchadas e pontas queimadas.
-*   **Atadura do Velo:** Atar o velo colocando a l„ da regi„o central (costelas) para o lado de fora, o que facilita a classificaÁ„o da finura mÈdia.
-*   **Material de AmarraÁ„o:** Atar os velos somente com fios de papel ou com a prÛpria l„. Evitar fios de sisal, pois soltam fibras que prejudicam o tingimento.
-*   **Embolsamento:** Embolsar a l„ por categoria imediatamente apÛs a tosquia.
-    *   Embolsar separadamente a l„ das ovelhas de cria, borregas, capıes e carneiros.
-    *   O embolse imediato facilita a classificaÁ„o, evita sujar a l„ e o desatar dos velos.
-*   **Armazenamento:** Evitar o excesso de velos numa mesma bolsa (produz rasgos nos velos).
-*   **CondiÁıes de Armazenamento:** Conservar as bolsas em piso seco, preferencialmente sobre estrados de madeira e ao abrigo do tempo.
-
-### VI. Manejo Animal PÛs-tosquia
-
-*   **PerÌodo CrÌtico:** Os primeiros 15 dias pÛs-tosquia s„o crÌticos devido ao estresse e ‡ perda do isolamento tÈrmico da l„. Um bom manejo È fundamental para evitar riscos.
-*   **CondiÁ„o Corporal:** Recomenda-se esquilar os ovinos quando est„o ganhando peso.
-*   **Cordeiro Pequeno:** N„o esquilar cordeiros muito pequenos.
-*   **Reuni„o com Cordeiro:** Terminar a tosquia das ovelhas de cria em tempo h·bil para facilitar o reencontro com os cordeiros antes do anoitecer.
-*   **CompensaÁ„o TÈrmica:** A pele do animal engrossa em atÈ duas semanas para compensar a perda da cobertura de l„.
-*   **Aumento de Consumo:** As ovelhas aumentam o consumo alimentar em 5-30% por cerca de 2 meses apÛs a tosquia para compensar a maior necessidade de energia (embora haja uma depress„o inicial nas primeiras 48 horas em climas frios).
- `;
-
