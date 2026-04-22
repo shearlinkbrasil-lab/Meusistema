@@ -39,6 +39,9 @@
                 <a href="#" class="nav-item">
                     <i class="ph ph-cloud-sun"></i> Dados Climáticos
                 </a>
+                <a href="#" class="nav-item" onclick="showApiKeyModal(); return false;" id="config-nav-btn">
+                    <i class="ph ph-key"></i> API Key
+                </a>
             </nav>
             <div class="sidebar-footer">
                 <img src="assets/logo_seal.png" alt="Shearlink Official Seal" class="brand-seal">
@@ -166,6 +169,28 @@
 
     <!-- Overlay para fechar drawers no mobile -->
     <div class="drawer-overlay" id="drawer-overlay"></div>
+
+    <!-- Modal: Configurar API Key -->
+    <div class="apikey-overlay" id="apikey-overlay">
+        <div class="apikey-modal">
+            <div class="apikey-modal-header">
+                <i class="ph ph-key"></i>
+                <h3>Configurar Chave da API</h3>
+            </div>
+            <p>Para usar o Consultor IA, você precisa de uma chave gratuita do Google AI Studio. Ela fica salva só no seu navegador.</p>
+            <ol>
+                <li>Acesse <a href="https://aistudio.google.com/app/apikey" target="_blank">aistudio.google.com/app/apikey</a></li>
+                <li>Clique em <strong>"Create API Key"</strong></li>
+                <li>Copie a chave e cole abaixo</li>
+            </ol>
+            <input type="password" id="apikey-input" placeholder="AIzaSy..." autocomplete="off" />
+            <div class="apikey-modal-actions">
+                <button onclick="saveApiKey()" class="btn-save-key"><i class="ph ph-check"></i> Salvar e Continuar</button>
+                <button onclick="closeApiKeyModal()" class="btn-cancel-key">Cancelar</button>
+            </div>
+            <small>A chave é salva localmente no navegador (localStorage). Não é enviada para nenhum servidor externo.</small>
+        </div>
+    </div>
 
     <script src="knowledge.js"></script>
     <script src="script.js"></script>

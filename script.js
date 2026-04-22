@@ -1,5 +1,5 @@
-// PASSO FUNDAMENTAL: Cole o longo código que o Google gerou para você dentro das aspas abaixo!
-const API_KEY = "AIzaSyBcUO-aQkdX7z6L6rImkp0nPh1ACoN5oGM";
+// Chave carregada do localStorage — nunca fica exposta no código
+function getApiKey() { return localStorage.getItem('shearlink_api_key') || ''; }
 
 // --- NOVAS FUNÇÕES: Memória Contextual e Clima ---
 let chatHistory = [];
@@ -394,8 +394,13 @@ REGRAS GERAIS:
         systemPrompt += globalWeatherContext;
 
         try {
-            if (API_KEY === "COLE_AQUI_O_SEU_CODIGO_DO_GOOGLE" || API_KEY === "") {
-                throw new Error("Chave da API não configurada.");
+            const API_KEY = getApiKey();
+            if (!API_KEY) {
+                document.getElementById(loadingId).remove();
+                showApiKeyModal();
+                chatHistory = chatHistory.slice(0, -1);
+                inputField.value = text;
+                return;
             }
 
             // --- LÓGICA RAG DE ALTA PERFORMANCE ---
@@ -417,7 +422,7 @@ REGRAS GERAIS:
             // Mantém apenas os últimos 10 turnos para não estourar a memória/contexto
             if (chatHistory.length > 10) chatHistory = chatHistory.slice(-10);
 
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${getApiKey()}`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -493,10 +498,61 @@ REGRAS GERAIS:
     });
 
     sendBtn.addEventListener('click', handleSend);
+
+    // Verifica se a chave ja esta configurada ao carregar
+    if (!getApiKey()) {
+        setTimeout(showApiKeyModal, 800);
+    }
 });
 
 // ============================================================
 //  LÓGICA DE DRAWERS MOBILE — HAMBURGUER + PAINEL CLIMA
+// ============================================================
+//  MODAL DE CONFIGURACAO DA API KEY
+// ============================================================
+function showApiKeyModal() {
+    const overlay = document.getElementById('apikey-overlay');
+    if (overlay) {
+        overlay.classList.add('active');
+        const input = document.getElementById('apikey-input');
+        const current = getApiKey();
+        if (current) input.value = current;
+        input.focus();
+    }
+}
+
+function closeApiKeyModal() {
+    const overlay = document.getElementById('apikey-overlay');
+    if (overlay) overlay.classList.remove('active');
+}
+
+function saveApiKey() {
+    const input = document.getElementById('apikey-input');
+    const key = input ? input.value.trim() : '';
+    if (!key || !key.startsWith('AIza')) {
+        input.style.borderColor = '#ef476f';
+        input.placeholder = 'Chave invalida! Deve comecar com AIza...';
+        return;
+    }
+    localStorage.setItem('shearlink_api_key', key);
+    closeApiKeyModal();
+    // Atualiza indicador no nav
+    const btn = document.getElementById('config-nav-btn');
+    if (btn) btn.style.color = 'var(--accent)';
+    // Reinicia clima com nova chave
+    getRealTimeWeather().then(r => { globalWeatherContext = r; });
+}
+
+// Fecha modal ao clicar fora
+document.getElementById('apikey-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closeApiKeyModal();
+});
+
+// Enter salva a chave
+document.getElementById('apikey-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') saveApiKey();
+});
+
 // ============================================================
 (function () {
     const hamburgerBtn = document.getElementById('hamburger-btn');

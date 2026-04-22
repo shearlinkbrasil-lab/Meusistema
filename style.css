@@ -1174,3 +1174,146 @@ h4 {
         padding: 6px 10px;
     }
 }
+
+/* ============================================================
+   MODAL API KEY
+   ============================================================ */
+.apikey-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 200;
+    backdrop-filter: blur(6px);
+    align-items: center;
+    justify-content: center;
+}
+
+.apikey-overlay.active {
+    display: flex;
+}
+
+.apikey-modal {
+    background: #1a222d;
+    border: 1px solid rgba(82, 183, 136, 0.3);
+    border-radius: 20px;
+    padding: 32px;
+    max-width: 480px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(82, 183, 136, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.apikey-modal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--accent);
+}
+
+.apikey-modal-header i {
+    font-size: 28px;
+}
+
+.apikey-modal-header h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.apikey-modal p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.apikey-modal ol {
+    color: var(--text-muted);
+    font-size: 14px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.apikey-modal ol a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.apikey-modal ol a:hover {
+    text-decoration: underline;
+}
+
+#apikey-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: white;
+    font-size: 15px;
+    font-family: monospace;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+#apikey-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.1);
+}
+
+.apikey-modal-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-save-key {
+    flex: 1;
+    background: var(--accent);
+    color: var(--bg-dark);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.btn-save-key:hover {
+    background: #6ce0ab;
+    transform: translateY(-1px);
+}
+
+.btn-cancel-key {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.btn-cancel-key:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+.apikey-modal small {
+    color: var(--text-muted);
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.5;
+}
